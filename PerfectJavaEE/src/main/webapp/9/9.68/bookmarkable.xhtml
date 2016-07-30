@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>リスト9.68 クエリ文字列を処理するf:metadataとf:viewParamの例</title>
+    </h:head>
+    <h:body>
+        <f:metadata>
+            <f:viewParam name="param1" value="#{bookmarkableBean.param1}" />
+            <f:viewParam name="param2" value="#{bookmarkableBean.param2}" />
+            
+            <!-- リスト9.69　<f:viewAction>による処理の呼び出し例 -->
+            <!-- 処理の実行 -->
+            <f:viewAction action="#{bookmarkableBean.exec()}" />
+        </f:metadata>
+    </h:body>
+</html>
+

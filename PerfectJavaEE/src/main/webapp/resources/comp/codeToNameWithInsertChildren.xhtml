@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:composite="http://java.sun.com/jsf/composite">
+
+    <composite:interface>
+        <composite:attribute name="code" />
+        <composite:attribute name="name" />
+    </composite:interface>
+
+    <composite:implementation>
+        <h:panelGrid columns="3">
+            <h:inputText value="#{cc.attrs.code}" />
+            <composite:insertChildren id="btnToName" />
+            <h:inputText id="txtName" readonly="true" value="#{cc.attrs.name}" />
+        </h:panelGrid>
+    </composite:implementation>
+</html>
+

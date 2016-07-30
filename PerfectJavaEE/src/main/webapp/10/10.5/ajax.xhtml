@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>リスト11.2 f:ajaxタグでコンポーネントを挟む例</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <f:ajax event="keyup" execute="txt1 txt2" render="ret" listener="#{ajaxGroupBean.concat()}">
+                <h:inputText id="txt1" value="#{ajaxGroupBean.val1}" />
+                <h:inputText id="txt2" value="#{ajaxGroupBean.val2}" />
+            </f:ajax>
+            <h:outputText id="ret" value="#{ajaxGroupBean.ret}" />
+        </h:form>
+    </h:body>
+</html>
+

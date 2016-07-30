@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+    <!-- Flow定義 FlowCounterDefinition.java, AnotherFlowCounterDefinition.javaを以下定義可能
+    <flow-definition id="counterFlow">
+        <initializer>#{flowCounter.init()}</initializer>
+        <start-node>first</start-node>
+        <view id="first">
+            <vdl-document>/flow/firstFlow.xhtml</vdl-document>
+        </view>
+        <view id="second">
+            <vdl-document>/flow/secondFlow.xhtml</vdl-document>
+        </view>
+        <view id="third">
+            <vdl-document>/flow/thirdFlow.xhtml</vdl-document>
+        </view>
+        <flow-call id="another">
+            <flow-reference>
+                <flow-id> anotherFlow</flow-id>
+            </flow-reference>
+        </flow-call>
+        <flow-return id="return">
+            <from-outcome>/flow/flowEntry.xhtml</from-outcome>
+        </flow-return>
+        <finalizer>#{flowCounter.fin()}</finalizer>
+    </flow-definition>
+
+    <flow-definition id="anotherFlow">
+        <initializer>#{anotherFlowCounter.init()}</initializer>
+        <start-node>another</start-node>
+        <view id="another">
+            <vdl-document>/flow/anotherFlow.xhtml</vdl-document>
+        </view>
+    </flow-definition>
+    -->
+    
+    <!-- リスト9.56 継承したPhaseListenerクラスの登録 -->
+    <lifecycle>
+        <phase-listener>perfect.javaee.phase.CheckPhaseListener</phase-listener>
+    </lifecycle>
+    
+    <!-- リスト9.41　faces-config.xmlにおけるresource-library-contracts定義 -->
+    <application>
+        <resource-library-contracts>
+            <contract-mapping>
+                <url-pattern>/user/admin/*</url-pattern>
+                <contracts>theme1</contracts>
+            </contract-mapping>
+
+            <contract-mapping>
+                <url-pattern>/user/user/*</url-pattern>
+                <contracts>theme2</contracts>
+            </contract-mapping>
+        </resource-library-contracts>
+    </application>
+</faces-config>
